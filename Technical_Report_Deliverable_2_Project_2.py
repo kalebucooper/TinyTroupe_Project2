@@ -1,12 +1,7 @@
 
 """
-=============================================================
-TinyTroupe Simulation App (Deliverable 2 – Technical Report)
-Author: Kaleb Cooper
-Date: November 2025
-=============================================================
 
-🎯 Objective
+Objective:
 ------------
 This application demonstrates a beta version of a persona-based
 simulation framework using the TinyTroupe library (v0.5.2).
@@ -15,14 +10,9 @@ Data Science" by integrating multiple AI-driven personas,
 conversation orchestration, and real-time feature evaluation
 through a Streamlit UI.
 
-The code below includes embedded commentary that functions as
-a *technical report*, analyzing the architecture, algorithms,
-and design trade-offs of the system.
-"""
 
-# =============================================================
-# 1️⃣  LIBRARY IMPORTS AND SYSTEM INITIALIZATION
-# =============================================================
+# 1 LIBRARY IMPORTS AND SYSTEM INITIALIZATION
+
 
 import os
 from dotenv import load_dotenv
@@ -35,7 +25,7 @@ import streamlit as st
 from simulation_manager import run_simulation
 
 """
-🧠 Algorithmic Rationale:
+ Algorithmic Rationale:
 -------------------------
 This architecture separates concerns between:
     (1) the *user interface layer* (Streamlit)
@@ -46,9 +36,9 @@ This modular design mirrors multi-agent frameworks such as
 Zhou et al. (2023), “Generative Agents,” and Liang et al. (2024).
 """
 
-# =============================================================
-# 2️⃣  STREAMLIT USER INTERFACE
-# =============================================================
+
+# 2 STREAMLIT USER INTERFACE
+
 
 st.set_page_config(page_title="TinyTroupe Simulation", page_icon="🎭", layout="centered")
 st.title("🎭 TinyTroupe Persona Simulation (Deliverable 2)")
@@ -68,9 +58,9 @@ with col2:
 with col3:
     api_key = st.text_input("🔑 OpenAI API Key (optional)", type="password")
 
-# =============================================================
-# 3️⃣  RUNNING THE SIMULATION PIPELINE
-# =============================================================
+
+# 3 RUNNING THE SIMULATION PIPELINE
+
 
 if st.button("▶️ Run Simulation"):
     if not topic.strip():
